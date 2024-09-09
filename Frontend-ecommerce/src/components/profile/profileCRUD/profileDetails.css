@@ -1,0 +1,146 @@
+.profile{
+    padding: 1rem ;
+    margin: 2rem auto;
+    max-width: 70rem;
+}
+
+.profile h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #aaa0aa;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.profile__details strong{
+    font-size: 18px;
+}
+
+.profile__details p {
+    margin: 10px 0;
+    font-size: 22px;
+}
+
+.profile__details input{
+    padding: 0.4rem;
+    margin:0.2rem;
+    width: 100%;
+    border:none;
+    font-size: 15px;
+    background-color: transparent;
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem;
+    gap: 0.5rem;
+}
+
+.profile__details p{
+    margin-top: 1rem;
+    color: #333;
+    font-size: 1rem;
+}
+
+.button-edit{
+    padding: 0.5rem;
+    font-size: 15px;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #f1ede9;
+    border: 1px solid #aaa0aa;
+}
+
+.button-save, .button-cancel, .button-create{
+    display: inline;
+    margin: 0.2rem;
+    padding: 0.6rem;
+    font-size: 14px;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #f1ede9;
+    border: 1px solid #aaa0aa;
+}
+
+.button-create{
+    width: 20%;
+}
+
+.button-edit:hover, .button-cancel:hover, .button-save:hover, .button-create:hover{
+    cursor: pointer;
+    background-color: #aaa0aa;
+}
+
+.required {
+    color: red;
+    font-size: 1.2rem;
+    margin-left: 0.2rem;
+}
+
+@media (max-width: 1200px) {
+    .profile {
+        padding: 2.5rem;
+        margin: 3rem auto;
+        max-width: 40rem;
+    }
+
+    .profile h3{
+        font-size: 1.4rem;
+    }
+    .profile__details {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 992px) {
+    .profile {
+        padding: 2rem;
+        margin: 2.5rem auto;
+        max-width: 35rem;
+    }
+
+    .profile__details input {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile__details {
+        padding: 1.5rem;
+        margin: 2rem auto;
+        max-width: 30rem;
+    }
+
+    .profile__details h3 {
+        font-size: 1.2rem;
+    }
+
+    .button-edit,
+    .button-save,
+    .button-cancel {
+        width: 30%;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile {
+        padding: 1rem;
+        margin: 1.5rem auto;
+        max-width: 90%;
+    }
+
+    .profile__details input {
+        padding: 0.2rem;
+        font-size: 0.5rem;
+    }
+
+    .button-edit,
+    .button-save,
+    .button-cancel {
+        width: 40%;
+    }
+}

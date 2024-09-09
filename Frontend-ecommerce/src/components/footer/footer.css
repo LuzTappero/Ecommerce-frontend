@@ -1,0 +1,47 @@
+.footer {
+  padding: 2rem 3rem;
+  display: flex;
+  background-color: #ebeae7;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer__contactInfo-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.footer__contactInfo a {
+  color: #615f5f;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.footer__contactInfo a:hover {
+  color: #aaa;
+}
+
+.footer__contactInfo--icon {
+  margin: 0.3rem;
+  margin-bottom: 1.2rem;
+}
+
+
+.p__copyright {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #404c4c;
+  margin: 0;
+}
+
+.p__createdby{
+  font-family: 'Amatic SC', serif;
+  font-size: 2rem;
+  margin: 0;
+
+}

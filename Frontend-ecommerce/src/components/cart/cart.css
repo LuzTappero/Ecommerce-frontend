@@ -1,0 +1,121 @@
+.cart__toggle,.cart__button-buy {
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #a08ba0;
+}
+
+.cart__toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 2.8rem;
+  width: 2.8rem;
+  position: fixed;
+  right: 2.8rem;
+  top: 10rem;
+  border-radius: 9999px;
+  padding: 0.7rem;
+  z-index: 100000;
+  color: #eeeeee;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cart__toggle:hover, .cart__button-buy:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+  background: #7f6399;
+}
+
+.cart__toggle ~ input:checked ~ .cart {
+  display: block;
+}
+
+.cart__button-buy {
+  margin: auto;
+  margin-top: 2.5rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  padding: 0.5rem;
+  color: #eeeeee;
+  font-size: 18px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart {
+  background: #ebeae7;
+  display: none;
+  flex-direction: column;
+  padding: 4rem;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  width: 22rem;
+  height: 95%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  border-left: 2px solid #ddd;
+  z-index: 9999;
+}
+
+.cart ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  gap: 1rem;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.subtitle__totalprice{
+  margin: 1rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 1.2rem; 
+  color: #383438;
+
+}
+
+.cart p {
+  text-align: center;
+  font-size:1.1rem;
+  color: #1f1e1e;
+  margin: 0.5rem 0;
+}
+
+.delivery-option {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.delivery-option label {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.delivery-details {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-option input[type="radio"] {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.delivery-details p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.7;
+}

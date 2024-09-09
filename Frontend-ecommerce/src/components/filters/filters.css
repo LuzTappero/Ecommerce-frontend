@@ -1,0 +1,118 @@
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    font-size: 13px;
+    padding: 1rem;
+    margin: 5rem ;
+    margin-bottom: 0;
+    background-color: #f9f9f9;
+    margin-top:0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.filters > div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    max-width: 350px;
+}
+
+.filters label {
+    white-space: nowrap;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.input__text,
+.input__range,
+.select_filter {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin:auto
+
+}
+
+.input__range{
+    cursor: pointer;
+}
+
+.input__range:hover,
+.select_filter :hover,
+.input__text:hover {
+    border-color: #007bff;
+    box-shadow: 0 0 0 1px rgba(0, 123, 255, 0.25);
+}
+
+.filters__span-price {
+    padding: 0.25rem 0.5rem;
+    background-color: #007bff;
+    opacity:75%;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-top: 0.3rem;
+    display: inline-block;
+}
+
+/* Medias queries */
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .filters > div {
+        width: 100%;
+        max-width: none;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .input__range {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .filters {
+        font-size: 12px;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .filters > div {
+        width: 100%;
+        max-width: none;
+        flex-direction: column;
+    }
+
+    .select_filter,
+    .input__text,
+    .input__range{
+        font-size: 12px;
+        padding: 0.4rem;
+
+    }
+
+    .filters__span-price {
+        font-size: 12px;
+        padding: 0.2rem 0.4rem;
+    }
+}

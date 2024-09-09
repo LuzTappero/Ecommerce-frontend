@@ -1,0 +1,72 @@
+.profile-button {
+    display: block;
+    width: 50%;
+    padding: 0.8rem;
+    margin:auto;
+    background-color: #aaa0aa;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.profile-button:hover {
+    background-color: #a08ba0;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
+
+.profile__user-data {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+    padding: 0;
+}
+
+.profile__user-data.show{
+    max-height: 100px;
+    opacity: 1;
+}
+
+.profile__details-content {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+    padding: 0;
+}
+
+.profile__details-content.show{
+    max-height: 600px;
+    max-width: 800px;
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.profile__user-data--info {
+    padding: 0.5rem;
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    color: #333;
+    font-size: 17px;
+    margin-bottom: 0rem;
+}
+
+.profile__user-data--info:hover {
+    transform: scale(1.05);
+}

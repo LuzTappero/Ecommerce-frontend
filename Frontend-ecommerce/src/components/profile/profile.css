@@ -1,0 +1,94 @@
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile h2{
+    font-size: 1.7rem;
+    color: #333;
+    text-align: center;
+}
+
+.profile__container{
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 10rem;
+    margin:8rem auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile__container-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto 1rem auto;
+    max-width: 800px;
+}
+
+.profile__container-message p{
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    text-align: justify;
+    color: #666;
+    margin:0;
+    line-height: 1.6; 
+}
+
+.profile__container-details{
+    display: flex;
+    flex-direction: column;
+    padding:4rem;
+    gap: 8px;
+}
+
+
+@media (max-width: 1200px) {
+    .profile__container {
+        padding: 8rem;
+        margin: 6rem auto;
+    }
+
+    .profile__container-message {
+        margin: 2rem auto 1rem auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .profile__container {
+        padding: 6rem;
+        margin: 5rem auto;
+    }
+
+    .profile__container-message {
+        margin: 1.5rem auto 0.5rem auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile__container {
+        padding: 4rem;
+        margin: 4rem auto;
+    }
+
+    .profile h2 {
+        font-size: 1.5rem;
+    }
+
+    .profile__container-message p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile__container {
+        padding: 2rem;
+        margin: 2rem auto;
+    }
+
+    .profile__container-message p {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,86 @@
+.subheader{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 3rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.subheader__left-content{
+    text-align: center;
+    padding: 3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:3rem;
+}
+
+.subheader__right-content{
+    background-image: url(../../../images_home/subheader2.jpg);
+    padding: 3rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+    opacity: 75%;
+    min-height: 300px;
+}
+
+.subheader h2{
+    font-size: 40px;
+    margin-top:6rem;
+    color: #3b3d31;
+    font-family: 'Amatic SC', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.subheader h2:hover {
+    color: #3b3d31;
+    transform: translateY(-5px);
+}
+
+.subheader__button {
+    background-color:transparent;
+    padding: 0.7rem;
+    width: 14rem;
+    max-width: 80%;
+    margin: auto;
+    background-color: #cbbca7;
+    border: 2px solid #86776c;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subheader__button:hover{
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+    .subheader__button{
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+.subheader__button {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    max-width: 120px;
+    }
+}

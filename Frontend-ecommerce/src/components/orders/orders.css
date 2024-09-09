@@ -1,0 +1,47 @@
+.purchases{
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 0;
+    opacity: 0;
+    overflow-y: auto;
+}
+
+.purchases.show {
+    max-height: 1000px;
+    opacity: 1;
+    padding: 0rem;
+}
+
+.purchases h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333;
+}
+
+.purchases ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.purchases li {
+    margin:2rem;
+    padding: 1rem;
+    background-color: #e9e9e9;
+    border-radius: 8px;
+    border-bottom: 1px solid rgb(194, 194, 194);
+}
+
+.purchases h3 {
+    margin: 0;
+    font-size: 25px;
+    color: #635266;
+}
+
+.purchases p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
