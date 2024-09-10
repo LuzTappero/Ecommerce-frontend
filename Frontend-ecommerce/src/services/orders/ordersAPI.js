@@ -16,8 +16,9 @@ export const getUserPurchases = async () => {
     });
     return response.data;
     } catch (error) {
-        console.error('Error fetching user purchases:', error);
-        throw error;
+        if (error.response && error.response.status !== 404) {
+            console.error(error);
+        }
     }
 };
 

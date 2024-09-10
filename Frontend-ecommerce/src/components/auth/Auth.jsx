@@ -2,9 +2,9 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/authContext";
 import { validateRegistration } from "../../utils/validateRegistration";
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import "./auth.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
+import "./auth.css"
 
 function Auth() {
   const [isLogin, setIsLogin] = useState(true);
@@ -148,13 +148,6 @@ function Auth() {
             ))}
           </ul>
         )}
-        {/* {isLogin && (
-          <div className="auth__forgot-password">
-            <a className="auth__forgot-password-link" href="">
-              Forgot your password?
-            </a>
-          </div>
-        )} */}
         <div className="auth__go-to-register">
           <h2 className="auth__subtitle">
             {isLogin

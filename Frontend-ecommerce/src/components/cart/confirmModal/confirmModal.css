@@ -16,15 +16,19 @@
 
 .confirm-modal h2{
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
     color: #333;
 }
 
 .confirm-modal p{
     margin: 0.5rem 0;
-    font-size: 16px;
+    font-size: 1.5rem;
     color: #666;
+}
+
+.confirm-modal strong{
+    font-size: 1.2rem;
 }
 
 

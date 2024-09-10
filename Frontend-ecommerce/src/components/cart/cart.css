@@ -48,7 +48,7 @@
   background: #ebeae7;
   display: none;
   flex-direction: column;
-  padding: 4rem;
+  padding: 5rem;
   position: fixed;
   right: 0px;
   top: 0px;
@@ -74,14 +74,14 @@
   margin: 1rem;
   text-align: center;
   margin-top: 0.5rem;
-  font-size: 1.2rem; 
+  font-size: 1.2rem;
   color: #383438;
 
 }
 
 .cart p {
   text-align: center;
-  font-size:1.1rem;
+  font-size:1.2rem;
   color: #1f1e1e;
   margin: 0.5rem 0;
 }
@@ -115,7 +115,7 @@
 }
 
 .delivery-details p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #666;
   line-height: 1.7;
 }

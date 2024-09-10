@@ -7,14 +7,17 @@ export const getProfileByUserId = async (userId) => {
     const token = sessionStorage.getItem("access_token");
     const response = await axios.get(`${API_URL}/byUser/${userId}`, {
         headers: {
-        "Content-Type": "aplication/json",
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
         },
     });
     return response.data;
     } catch (error) {
-    console.error("Error fetching profile by user ID:", error);
-    throw error;
+        if (error.response && error.response.status !== 404) {
+            console.info('Profile not existing');
+        } else {
+            throw error;
+        }
     }
 };
 
@@ -44,23 +47,6 @@ export const createProfile = async (profileData) => {
     });
     return response;
     } catch (error) {
-        console.error("Error updating profile");
-    throw error;
-    }
-};
-
-export const saveCart = async (profileData) => {
-    try {
-    const token = sessionStorage.getItem("access_token");
-    const response = await axios.post(`${API_URL}/saveCart`, profileData, {
-        headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-        },
-    });
-    return response;
-    } catch (error) {
-        console.error("Error saving the cart");
     throw error;
     }
 };

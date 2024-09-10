@@ -7,7 +7,6 @@ import { useUserProfile } from '../../../Context/profileContext';
 import { toast } from 'react-toastify';
 import './profileDetails.css'
 
-
 const ProfileDetails = () => {
     const { profile, setProfile } = useUserProfile();
     const [isEditing, setIsEditing] = useState(false);
@@ -34,7 +33,6 @@ const ProfileDetails = () => {
 
     const handleSaveClick = async (e) => {
         e.preventDefault()
-
         const { isValid, errorMessages } = validateProfileForm(updatedProfile.address, updatedProfile.phone, updatedProfile.social_media);
         if (!isValid) {
         errorMessages.forEach((message) => {
@@ -51,7 +49,7 @@ const ProfileDetails = () => {
     }
 
         try {
-        const response = await updateProfileById(
+            const response = await updateProfileById(
             profile.profile_id,
             updatedProfile)
             if (response) {
@@ -80,8 +78,10 @@ const ProfileDetails = () => {
     if (!profile) {
         return (
             <>
-                <p>Profile data not found</p>
-                <button className='button-create' onClick={() => {navigate('/profile-create')}}>
+                <p className='p_notprofile'>
+                You don't have a profile! Do it here</p>
+                <button className='button-create' onClick={() => {
+                    navigate('/profile-create')}}>
                     Create Profile
                 </button>
             </>
@@ -89,7 +89,7 @@ const ProfileDetails = () => {
     }
 
     return (
-        <div className="profile">
+        <div className="userProfile">
         <h3><i className="fas fa-user-circle"></i> PROFILE DETAILS</h3>
         <div className="profile__details">
     <p>
@@ -105,7 +105,7 @@ const ProfileDetails = () => {
                         onChange={handleChange}
                         required
                     />
-                    </label>
+                </label>
             </>
         ) : (
             ` ${profile.address}`

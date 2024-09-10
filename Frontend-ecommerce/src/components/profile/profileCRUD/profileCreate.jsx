@@ -12,8 +12,7 @@ const ProfileCreate = () => {
         phone: "",
         social_media: "",
     });
-    const [error, setError] = useState(null);
-    const [success, setSuccess] = useState(false);
+
     const navigate = useNavigate();
     const location = useLocation();
     const {setProfile } = useUserProfile();
@@ -29,7 +28,12 @@ const ProfileCreate = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const { isValid, errorMessages } = validateProfileForm(profileData.address, profileData.phone, profileData.social_media);
+        const { isValid, errorMessages } =
+        validateProfileForm(
+            profileData.address,
+            profileData.phone,
+            profileData.social_media);
+
         if (!isValid) {
             errorMessages.forEach((message) => {
                 toast.error(message, {
@@ -41,17 +45,15 @@ const ProfileCreate = () => {
                     draggable: true,
                 });
             });
-            return;
+        return;
         }
 
         try {
             const response = await createProfile(profileData);
             if (response.status === 201) {
-                setSuccess(true);
                 toast.success("Profile details saved successfully");
                 setProfileData({ address: '', phone: '', social_media: '' });
                 setProfile(response.data.profile);
-
                 if (location.state?.fromCart) {
                     toast.success('Profile created successfully! Redirecting to your cart...', {
                         position: "top-center",
@@ -61,7 +63,6 @@ const ProfileCreate = () => {
                         pauseOnHover: false,
                         draggable: false,
                     });
-
                     setTimeout(() => {
                         navigate('/shop');
                     }, 1500);
@@ -79,7 +80,7 @@ const ProfileCreate = () => {
                 pauseOnHover: true,
                 draggable: true,
             });
-            setSuccess(false);
+
         }
     };
     return (
@@ -123,8 +124,8 @@ const ProfileCreate = () => {
             <button className="button-create" type="submit">
                 Create Profile
             </button>
-            {success && <p className="success-message">{success}</p>}
-            {error && <p className="error-message">{error}</p>}
+            {/* {success && <p className="success-message">{success}</p>}
+            {error && <p className="error-message">{error}</p>} */}
             </div>
         </form>
         </div>

@@ -16,15 +16,21 @@ const UserPurchases = ({ isVisible }) => {
           return;
         }
         const response = await getUserPurchases();
-        const ordersArray = Object.values(response);
-        if (Array.isArray(ordersArray)) {
-          setOrders(ordersArray);
+
+
+        if (response && typeof response === 'object') {
+          const ordersArray = Object.values(response);
+            if (Array.isArray(ordersArray)) {
+              setOrders(ordersArray);
+            } else {
+              setError("Unexpected data format");
+            }
         } else {
-          console.error("Data is not in the expected format:", response);
-          setError("Unexpected data format");
+          null
         }
       } catch (err) {
         console.error(err);
+        setError("Failed to fetch purchases");
       } finally {
         setLoading(false);
       }

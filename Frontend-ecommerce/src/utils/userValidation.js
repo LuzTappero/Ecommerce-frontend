@@ -1,11 +1,10 @@
-
 export const validatePassword = (password) => {
     const passwordString = String(password);
     const hasMinLength = passwordString.length >= 8;
     const hasUpperCase = /[A-Z]/.test(password);
     const hasLowerCase = /[a-z]/.test(password);
     const hasNumber = /\d/.test(password);
-    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password); // Ejemplo de caracteres especiales
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
 
     if (!hasMinLength) {
         return "The password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.";
@@ -28,7 +27,7 @@ export const validatePassword = (password) => {
 export const validateUsername = (username) => {
     const usernameString = String(username);
     const hasMinLength = usernameString.length >= 3;
-    const hasMaxLength = usernameString.length <= 15; 
+    const hasMaxLength = usernameString.length <= 15;
     const hasNoSpecialChars = /^[a-zA-Z0-9]+$/.test(username);
     if (!hasMinLength) {
         return "Username must be at least 3 characters long.";

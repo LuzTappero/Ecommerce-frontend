@@ -1,5 +1,5 @@
 .footer {
-  padding: 2rem 3rem;
+  padding: 1.2rem;
   display: flex;
   background-color: #ebeae7;
   justify-content: space-evenly;
@@ -15,10 +15,9 @@
   align-items: center;
 }
 
-
 .footer__contactInfo a {
   color: #615f5f;
-  font-size: 24px;
+  font-size: 1.5rem;
   transition: color 0.3s;
 }
 
@@ -31,9 +30,8 @@
   margin-bottom: 1.2rem;
 }
 
-
 .p__copyright {
-  font-size: 1rem;
+  font-size: 1.0rem;
   font-weight: bold;
   color: #404c4c;
   margin: 0;
@@ -41,7 +39,7 @@
 
 .p__createdby{
   font-family: 'Amatic SC', serif;
-  font-size: 2rem;
+  font-size: 2.3rem;
   margin: 0;
 
 }

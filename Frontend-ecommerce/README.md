@@ -1,13 +1,3 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-
 
 # Girly
 
@@ -21,76 +11,168 @@ El proyecto cuenta con funcionalidades específicas para administradores, que pu
 
 # INSTALACIÓN
 
-1. Clonar el respositorio: git clone https://github.com/LuzTappero/Project-FullStack
+1. Clonar el respositorio:
+
+- Backend:
+
+    1-Navegar a la carpeta del servidor
+
+    2- Ejecutar el comando: git clone https://github.com/LuzTappero/BACKEND-Girly
+
+- Frontend:
+
+    1- Navegar a la carpeta del servidor backend
+
+    2- Ejecutar el comando git clone https://github.com/LuzTappero/Girly-ecommerce
+
 2. Instalar las dependencias del proyecto:
-- Para el Backend: posicionarse en la carpeta del servidor y ejecutar : npm install
 
-- Para el Frontend: posicionarse en la carpeta del servidor y ejecutar : npm install
+- Backend:
 
-3. Configurar la base de datos: Ajusta los parámetros de conexión en el archivo de configuración.
+    1-Navegar a la carpeta del servidor
 
-nombres de variables de entorno de bases de datos"""!!!!
+    2- Ejecutar el comando: npm install
 
-4. Ejecutar la aplicación
-- Para el Backend: npm run dev (inicia el servidor en modo desarrollo)
-- Para el Frotend: npm ..................................
+- Frontend:
+
+    1- Navegar a la carpeta del frontend
+
+    2- Ejecutar el comando npm install
+
+3. Configurar las variables de entorno
+ - Variables de Entorno para el Backend:
+
+    PORT= 8080
+
+    TIMES = 900000
+
+    MAX= 100
+
+    ORIGIN_ACCEPTED= http://localhost:5173 (local host del frotend para la configuración de cors)
+- Variables de Entorno para la Base de Datos:
+
+    DB_HOST=localhost
+
+    DB_USER=tu-usuario
+
+    DB_PASSWORD=tu-contraseña
+
+    DB_NAME=nombre-de-tu-base-de-datos
+
+    DB_DIALECT=mysql
+
+- Variables de entorno para la configuración de la nube de imágenes cloudinary
+
+    CLOUD_NAME=dmofgxbvt
+
+    CLOUD_KEY=265163655817565
+
+    CLOUD_SECRET=IwpxICQCVpkbvX24YNLstoNLGZY
+
+
+4. Configurar la base de datos
+
+La base de datos exportada se encuentra en la carpeta db, a la misma altura que src.
+
+La tabla productos ya incluye un script de inserción para poblar el modelo con los productos necesarios.
+La tabla productos ya incluye un script de inserción para poblar el modelo con las categorias necesarias.
+
+5. Ejecutar la aplicación
+- Backend:
+
+    1-Navegar a la carpeta del servidor
+
+    2- Ejecutar el comando: npm install
+
+- Frontend:
+
+    1- Navegar a la carpeta del frontend
+
+    2- Ejecutar el comando npm install
 
 # USO
 
 ### CLIENTES
-- Los clientes pueden navegar por las distintas secciones del sitio, como la tienda de productos, la página de inicio, About, y acceder a la seccción de autenticación para registrarse como nuevos usuarios y posterior autenticación (CON SEGURIDAD)
-- Explorar el catálogo de productos con opciones de filtrado
-    - precio
-    - categoria (nombras todas)
-    - nombre de producto.
- y búsqueda para encontrar fácilmente lo que desean.
+- Los clientes pueden navegar por las diferentes secciones del sitio, como la tienda de productos, la página de inicio, "About", y la sección de autenticación. Desde allí, pueden registrarse como nuevos usuarios y autenticarse posteriormente, todo con medidas de seguridad adecuadas.
+- Explorar el catálogo de productos con opciones de filtrado y búsqueda para encontrar fácilmente lo que desean:
+    - Filtrado por precio mínimo y máximo.
+    - Filtrado por categoría: ['Clothing', 'Shoes', 'Accesories', 'Bags', Jewelry, 'coats' ].
+    - Búsqueda por nombre de producto.
 
 ### CLIENTES AUTENTICADOS
 
-Los clientes que se registran como nuevos usuarios e inician sesión obtienen funciones adicionales, tales como:
-- Agregar productos al carrito de compras y gestionar los artículos en él, incluyendo la selección de cantidades.
-- Elegir opciones de compra según sus preferencias y necesidades.
-    -- envio
-    -- a casa
-- Realizar la compra y visualizar un listado con las compras realizadas y sus caracteristicas en la sección de profile 'My purchases'
-- Acceso a perfil extra, crear, editar.
-- deslogeo
+Los clientes que se registran y luego inician sesión obtienen acceso a funcionalidades adicionales, tales como:
+
+- Gestión del Carrito de Compras:
+    - Agregar productos al carrito.
+    - Gestionar los artículos en el carrito, incluyendo ajustar cantidades (aumentar, disminuir, eliminar).
+- Opciones de Compra Personalizadas:
+    - Selección de métodos de envío según sus preferencias
+    - Envío a domicilio.
+    - Retiro en tienda.
+- Historial de Compras:
+    - Visualizar un historial detallado(con fecha de compra, producto, cantidad, precio, modo de envio) de las compras realizadas en la sección de perfil "My Purchases".
+- Gestión del Perfil:
+    - Acceder y editar el perfil personal, que puede incluir información opcional como dirección, teléfono, y enlaces a redes sociales.
+- Seguridad en la Sesión:
+    - Cerrar sesión de manera segura para proteger la cuenta y los datos del usuario.
 
 
 ### ADMINISTRADORES
 
-Los administradores tienen acceso a una interfaz personalizada que incluye herramientas exclusivas para la gestión de productos:
-- Agregar nuevos productos a la tienda, completando información detallada como nombre del producto, categoria, precio, AGREGAR imagenes DESDE LA COMPUTADORA DE CADA ADMINSITRADOR, SERAN SUBIDAS A LA NUBE y desde ahi accedidas.
-- Editar productos existentes, modificando cualquier información del producto
-- Eliminar productos.
-Todos estos cambios realizados por el administrador son directamenete impactados en la base de datos.
+Los administradores tienen acceso a una interfaz personalizada con herramientas exclusivas para gestionar el catálogo de productos de manera eficiente:
+- Agregar Nuevos Productos:
+    - Permite a los administradores añadir nuevos productos a la tienda, proporcionando información detallada como el nombre del producto,descripción, categoría, precio,imagenes.
+    - Pueden cargar imágenes directamente desde su computadora, que se suben automáticamente a la nube.
+
+- Editar productos existentes:
+    - Modificar cualquier información relevante de los productos, incluyendo nombre, descripción, precio, imagenes y categoría.
+
+- Eliminar Productos:
+    - Permite eliminar productos del catálogo de la tienda, lo que también se refleja automáticamente en la base de datos.
+
+Todos los cambios realizados por los administradores se aplican directamente a la base de datos, asegurando que el catálogo esté siempre actualizado y refleje la información más reciente.
+
 
 # API ENDPOINTS
 
 ### BACKEND API (Servidor Node.ts con Express)
 
-#### ENDPOINTS PARA LA GESTIÓN DE USUARIOS
+#### ENDPOINTS PARA LA GESTIÓN DE USUARIOS (UserModel)
 
-- ** GET /user/
+- GET /user/
 Devuelve una lista json con todos los usuarios (util para un administrador)
-
-- ** GET /user/id/:id
-Devuelve una lista json con todos el usuario específicado por (util para un administrador)
 Ejemplo de respuesta JSON
 
+    [
+        {
+            "user_id": "244284aa-55bd-4fb2-8e04-2d38fb7a2c7b",
+            "username": "User",
+            "email": "User@gmail.com",
+            "role": "client",
+            "created_at": "2024-09-07T22:47:57.000Z",
+            "updated_at": "2024-09-07T22:47:57.000Z"
+        },
+    ...
+    ]
+
+
+- GET /user/id/:id
+Devuelve una lista json con todos el usuario específicado por id.Es útil para un administrador.
+Ejemplo de respuesta JSON
     {
-    "user_id": "244284aa-55bd-4fb2-8e04-2d38fb7a2c7b",//Random uuidv4
-    "username": "User",
-    "password": "Password hash",
-    "email": "User@gmail.com",
-    "role": "client",
-    "created_at": "2024-09-07T22:47:57.000Z",
-    "updated_at": "2024-09-07T22:47:57.000Z"
-    },
+        "user_id": "244284aa-55bd-4fb2-8e04-2d38fb7a2c7b",//Random uuidv4
+        "username": "User",
+        "password": "Password hash",
+        "email": "User@gmail.com",
+        "role": "client",
+        "created_at": "2024-09-07T22:47:57.000Z",
+        "updated_at": "2024-09-07T22:47:57.000Z"
+    }
 
-- ** POST /user/register
+-  POST /user/register
 
-Permite el registro de nuevos usuarios; por default todos los usuarios registrados a través del frontend serán registrados como rol 'client'.
+Permite el registro de nuevos usuarios. Por defecto, todos los usuarios registrados a través del frontend tendrán el rol de 'client'.
 
 ¿Cómo crear un usuario rol 'admin'?
 
@@ -104,57 +186,45 @@ Cuerpo de la solicitud (JSON)
         "role": "admin"
     }
 
-- ** POST user/login
+-  POST user/login
 
-Permite la autenticación de usuarios registrados y proporciona acceso a las funciones específicas del sistema. Este endpoint permite tanto a clientes como a administradores iniciar sesión en la aplicación.
+Permite la autenticación de usuarios registrados y proporciona acceso a las funciones específicas del sistema. Este endpoint permite tanto a clientes como a administradores iniciar sesión.
 
-El propósito de éste endpoint es Autenticar a los usuarios y generar un token de acceso JWT (JSON Web Token) para sesiones seguras.
-Cuerpo de la solicitud (JSON)
+Genera un token de acceso JWT (JSON Web Token) para sesiones seguras.
+
+Cuerpo de la solicitud
 
     {
         "email": "user@example.com",
         "password": "SecurePassword123!"
     }
 
-En caso de éxito se obtiene un JSON con un mensaje de éxito y el token creado.
-En caso de error se obtiene un JSON con un mensaje segun el error, contraseña incorrecta o usuario no encontrado en la base de datos.
+- Respuesta exitosa:
+    - Devuelve un mensaje de éxito y el token creado.
 
-MANEJO DEL TOKEN
-
-- El Token JWT se envia en la respuesta exitosa del endpoint y es almacenado en el session storage del navegador para su uso en futuras solicitudes que deben ser protegidas.
-
-- El token es incluido en el encabezado Authorization de las solicitudes a rutas protegidas.Las rutas que requieren autenticación y uso del token incluyen:
-    - Acciones relacionadas a la creación de el perfil:
-        - Creación de un perfil: Incluir datos personales como dirección (Address) y teléfono (Phone), necesarios para realizar compras con envío a domicilio.
-        - Actualizar la información personal almacenada en el perfil del usuario.
-        - Obtención del perfil: Recuperar los datos del perfil del usuario autenticado.
-
-    - Gestión de compras:
-        - Realizar una compra: Completar el proceso de compra y almacenar la orden en la base de datos.
-        - Lista de compras: Obtener un historial de las compras realizadas por el usuario
+- Manejo del Token:
+    - El Token JWT se envía en la respuesta exitosa y se almacena en el session storage del navegador para futuras solicitudes a rutas protegidas.
+    - Las rutas protegidas incluyen:
+        - Gestión del perfil: Crear, actualizar y obtener información del perfil e historial de compras.
 
 
-- ** POST user/logout
-Permite a los usuarios autenticados cerrar sesión en la aplicación.
-Este endpoint realiza la desconexión segura del usuario y envía una respuesta en formato JSON confirmando el cierre de sesión.
+-  POST user/logout
 
-El propósito del endpoint es finalizar la sesión del usuario autenticado y limpiar datos relacionados con la sesión activa.
+Permite a los usuarios autenticados cerrar sesión de forma segura.
 
-Respuesta Exitosa (Código 200):
-
+Respuesta exitosa (Código 200):
     {
         "message": "Logout successful"
     }
 
-
 Acciones Posteriores al Cierre de Sesión:
 
-- Eliminación del Token: El token JWT debe ser eliminado del session storage del navegador para asegurar que no se puedan realizar solicitudes autenticadas sin una nueva autenticación.
-- Limpieza del Carrito: Los items almacenados en el local storage del navegador, que puedan estar en el carrito de compras, deben ser eliminados para evitar datos obsoletos.
-- Datos del Perfil: luego de cierre de sesión los datos de perfil son seteados a nulos.
+- Eliminación del token JWT del session storage.
+- Limpieza del carrito de compras en el local storage.
+- Los datos del perfil se restablecen a null.
 
 
-- ** DELETE user/:id
+- DELETE user/:id
 Permite eliminar un usuario específico por id.
 
 Respuesta Exitosa (Código 200):
@@ -168,7 +238,7 @@ Respuesta en Caso de Error (Código 404)
         "error": "User not found"
     }
 
-- ** PATCH user/:id
+- PATCH user/:id
 
 Permite actualizar la información del usuario específicado por id.
 Cuerpo de la solicitud
@@ -190,32 +260,34 @@ ESTADO ACTUAL EN EL FRONTEND
 Implementación Pendiente:
 
 Las rutas para editar y eliminar usuarios están implementadas en el backend, pero aún no están conectadas ni implementadas en el frontend.
+
 Estas funcionalidades se añadirán en futuras actualizaciones para permitir a los usuarios gestionar su información personal a través de la interfaz de usuario,proporcionando una experiencia de usuario más completa y dinámica.
 
 
 #### ENDPOINTS PARA LA GESTIÓN DE PRODUCTOS
-La ruta del get es visible para todo aquel que acceda a la página, la ruta de post, patch y delete son solo visibles desde el frontend para el usuario con rol 'admin', le permitirá realizar todas las acciones relacionadas con el CRUD de productos.
 
-- ** GET /products
+La ruta de GET es accesible para cualquier usuario que visite la página. Sin embargo, las rutas de POST, PATCH y DELETE están restringidas solo a usuarios con rol de 'admin'. Estas rutas permiten realizar todas las acciones relacionadas con el CRUD de productos desde el frontend para administradores.
 
-Esta ruta permite obtener toda la lista de productos presentes en la base de datos.
-Respuesta exitosa (Código 200)
+- GET /products
+
+Esta ruta permite obtener toda la lista de productos presentes en la base de datos. Es accesible para todos los usuarios.
+Respuesta exitosa (Código 200):
 
     [
-    {
-        "product_id": 1,
-        "name": "T-shirt edit",
-        "description": "Comfortable cotton t-shirt",
-        "price": "9.99",
-        "imagePath": "https://res.cloudinary.com/dmofgxbvt/image/upload/v1725501584/products/ib4b6by3zqvtq66xamw9.jpg",
-        "category_id": 1,
-        "created_at": "2024-09-04T19:26:25.000Z",
-        "updated_at": "2024-09-05T01:59:43.000Z"
+        {
+            "product_id": 1,
+            "name": "T-shirt edit",
+            "description": "Comfortable cotton t-shirt",
+            "price": "9.99",
+            "imagePath": "https://res.cloudinary.com/dmofgxbvt/image/upload/v1725501584/products/ib4b6by3zqvtq66xamw9.jpg",
+            "category_id": 1,
+            "created_at": "2024-09-04T19:26:25.000Z",
+            "updated_at": "2024-09-05T01:59:43.000Z"
         },
     ...
     ]
 
-- ** GET /products/:id
+- GET /products/:id
 Obtiene la información detallada de un producto específico según su ID. Esta ruta es accesible para todos los usuarios.
 
 Respuesta exitosa (Código 200)
@@ -231,9 +303,9 @@ Respuesta exitosa (Código 200)
         "updated_at": "2024-09-05T01:59:43.000Z"
     }
 
-RUTAS PROTEGIDAS (Solo para usuarios Administradores)
+RUTAS DE GESTION DE PRODUCTOS
 
-- ** POST /products/create
+-  POST /products/create
 
 Esta ruta permite a los administradores crear nuevos productos. Está disponible tanto en el backend como en el frontend, siempre y cuando se valide el token de autenticación que se envia en el encabezado de la solicitud. El proceso se realiza a través de un formulario que asegura una experiencia de usuario intuitiva y eficiente, con vista inmediata de los productos agregados.
 
@@ -254,7 +326,7 @@ Respuesta exitosa (Código 201)
     }
 
 
-- ** PATCH /products/:id
+- PATCH /products/:id
 
 Esta ruta permite a los administradores actualizar la información de un producto existente. Está disponible tanto en el backend como en el frontend, siempre y cuando se valide el token de autenticación  que se envia en el encabezado de la solicitud. La actualización se realiza a través de un formulario en el frontend, asegurando una experiencia de usuario sencilla y eficiente, con vista inmediata de los productos editados
 
@@ -267,36 +339,46 @@ Cuerpo de la solicitud
         "imagePath": "Updated image",
         "category_id": 3
     }
-Respuesta Exitosa (Código 200)
+
+Respuesta Exitosa (Código 200):
 
     {
-        "message": "Product updated successfully",
+        "message": "Product updated successfully"
     }
 
-- ** DELETE /products/:id
+- DELETE /products/:id
 
 Respuesta exitosa (Códgo 204)
+
 En caso de éxito, la respuesta no contiene un cuerpo, solo un código de estado que indica que la eliminación fue realizada correctamente.
-
-Esta ruta permite a los administradores eliminar un producto existente. Está disponible tanto en el backend como en el frontend, siempre y cuando se valide el token de autenticación  que se envia en el encabezado de la solicitud. La solicitud se realiza a través de un método HTTP DELETE y asegura la eliminación del producto especificado, a través del parámetro :id.
-
 
 MANEJO DE ERRORES Y MENSAJES EN EL MODELO PRODUCTO
 
-Todos los mensajes y errores son mostrados al administrador a través de los formularios respectivos de cada endpoint, tanto para mensajes de éxito, errores producidos por campos incompletos , o falla al eliminar un producto porque está relacionado con otras tablas.
+Todos los mensajes de éxito y errores se muestran al administrador a través de los formularios correspondientes de cada endpoint. Esto incluye mensajes de éxito, errores por campos incompletos o fallas al eliminar un producto debido a que está relacionado con otras tablas.
 
 
-#### ENDPOINTS PARA LA GESTIÓN DEL PERFIL DEL USUARIOS
+#### ENDPOINTS PARA LA GESTIÓN DEL PERFIL DE USUARIOS AUTENTICADOS
 
-Este modelo le permite a un usuario autenticado, agregar datos solo si quiere hacer una compra que le tenga que llegar al domicilio, pudiendo tambien agregar un telefono de contacto y una red social (ésta última de manera opcional)
+Este modelo permite a un usuario autenticado agregar información adicional solo si desea realizar una compra que necesite entrega a domicilio. Los usuarios pueden agregar datos como la dirección de envío, un número de teléfono de contacto y, opcionalmente, una red social.
 
+- GET /profile/byUser
 
--- seguir con esto
+Este endpoint permite obtener el perfil de un usuario autenticado según su user_id de la tabla users. La solicitud requiere verificación de token para asegurar que el usuario esté autenticado.
+
+- POST /profile/create
+
+Este endpoint permite a los usuarios autenticados crear un perfil con datos adicionales opcionales. Esto es útil si el usuario desea realizar una compra con envío a domicilio. La solicitud debe estar autenticada.
+
+- PUT /profile/:profile_id
+
+Este endpoint permite a los usuarios autenticados actualizar su perfil utilizando el profile_id. Solo un usuario autenticado puede realizar esta acción.
+
+Estos tres endpoints son llamados a través desde frontend con el token de autenticación en el encabezado de la solicitud y se verifica en el backend a través del Middleware 'verifyToken' antes de seguir la función al controller.
 
 
 #### ENDPOINTS PARA LA GESTIÓN DE CATEGORIAS
 
-- ** GET /categories/
+- GET /categories/
 
 Respuesta exitosa (Código 200)
 "categories":
@@ -310,11 +392,11 @@ Respuesta exitosa (Código 200)
     ]
 
 El id de cada categoria es utilizado como Foreing key en la tabla productos. Este endpoint es llamado desde el servicio del Frontend para aplicar los filtros por categoria en la lista de los productos; también es utilizado por el administrador para seleccionar a que categoria pertenece el nuevo producto que desea crear.
+____
 
+Los endpoints que se detallan a continuación funcionan correctamente en el backend, pero aún no están integrados en el frontend. En el futuro, se agregarán para que el administrador pueda crear una nueva categoría mientras gestiona la creación de un producto.
 
-Los endpoint que detallaré a continuación están correctamente en funcionamiento desde el backend, pero aún no están integrados al frontend. En el futuro, se agregarán para que el administrador pueda crear una nueva categoria si así lo desea al mismo tiempo que gestiona la creación de un producto.
-
-- ** GET /categories/id/:id
+-  GET /categories/id/:id
 
 Permite obtener una categoria segun su id
 
@@ -325,9 +407,9 @@ Respuesta exitosa (Código 200)
         "name": "Shoes"
     }
 
-- ** POST /categories/create
+-  POST /categories/create
 
-Permite la creación de categorias especificando su nombre, el id se genera de manera autoincremental automaticamente por la base de datos.
+Este endpoint permite la creación de categorías especificando su nombre. El id se genera automáticamente de manera incremental en la base de datos.
 
 Cuerpo de la solicitud
 
@@ -338,13 +420,13 @@ Cuerpo de la solicitud
 Respuesta exitosa (Código 201)
 
     {
-        "message": "Category saved succesfully",
+        "message": "Category saved succesfully"
     }
 
 
-- ** PATCH /categories/:id
+-  PATCH /categories/:id
 
-Permite actualizar una categoria a través de su id
+Este endpoint permite actualizar el nombre de una categoría específica a través de su id.
 
 Cuerpo de la solicitud
 
@@ -359,11 +441,10 @@ Respuesta Exitosa(200)
     }
 
 
-- ** DELETE /categories/:id
+- DELETE /categories/:id
 
-Permite eliminar una categoria a través de su id.
+Este endpoint permite eliminar una categoría específica a través de su id.
 
-Respuesta Exitosa (200)
 
 Respuesta Exitosa(200)
 
@@ -371,81 +452,86 @@ Respuesta Exitosa(200)
         "message": "Category deleted successfully"
     }
 
-En este caso si se envia un mensaje de eliminación exitosa para facilitar la comprensión, cuando sea implementado al frontend no se enviará ningun contenido en la respuesta y tendrá un código 204.
-
+Nota: En este caso, se envía un mensaje de eliminación exitosa para facilitar la comprensión. Cuando se implemente en el frontend, no se enviará ningún contenido en la respuesta y se utilizará un código de estado 204.
 
 #### ENDPOINTS PARA LA GESTIÓN DE ORDENES DE COMPRA
 
 
-- ** GET /orders
+- GET /orders
 
 Este endpoint permite a los usuarios autenticados obtener un listado de sus órdenes de compra realizadas. El acceso a esta ruta requiere que el usuario esté autenticado y que el token de autenticación sea enviado en el encabezado de autorización. El token es verificado en el backend para garantizar que el usuario tenga permiso para acceder a esta información.
 
 Uso:
 
-Este endpoint está disponible desde el frontend (con validación del token enviado en el header de autenticación) permitiendo a los usuarios autenticados consultar sus propias órdenes de compra a través de su perfil.
-Este endpoint está implementados en la sección PROFILE - MY PURCHASES
+Este endpoint es accesible desde el frontend, donde se valida el token enviado en el encabezado de autenticación. Los usuarios pueden consultar sus órdenes de compra a través de la sección "PROFILE - MY PURCHASES" en su perfil.
 
-- ** POST /orders/saveCart
 
-Este endpoint permite al usuario autenticado guardar los items de compra, como orden de compra en la base de datos, y luego consultarlos a través de la ruta en /orders
-Este endpoint se ejecuta al confirmar una compra, los items comprados son guardados en la base de datos.
+- POST /orders/saveCart
+
+Este endpoint permite a un usuario autenticado guardar los ítems de su carrito de compras como una nueva orden de compra en la base de datos. Este proceso se ejecuta cuando el usuario confirma una compra. Los ítems comprados se guardan en la base de datos y pueden consultarse posteriormente a través del 'profile'.
+
+Al confirmar una compra desde el frontend, se envía una solicitud a este endpoint. El backend guarda los detalles de la compra en la base de datos, incluyendo los productos, cantidades, precios, y la información del usuario.
 
 
 ### FRONTEND API RUTAS
+
+Las rutas del frontend se dividen en dos categorías: rutas públicas, que están disponibles para todos los usuarios, y rutas protegidas, que requieren autenticación.
 
 RUTAS PÚBLICAS
 
 Estas rutas están disponibles para todos los usuarios, ya sea que estén autenticados o no.
 
-- **GET "/" (Home)
-Descripción: Página de inicio de la aplicación.
+- GET "/" (Home)
 
-Uso: Página principal donde los usuarios pueden ver una vista general de la aplicación.
+    Descripción: Página de inicio de la aplicación.
 
-- **GET "/about" (about)
-Descripción: Página de información sobre la marca de la tienda.
+    Uso: Página principal donde los usuarios pueden ver una vista general de la aplicación.
 
-Uso: Proporciona detalles sobre la misión, visión, y/o el equipo detrás del e-commerce.
+- GET "/about" (about)
 
-- **GET "/auth" (auth)
-Descripción: Página de autenticación para iniciar sesión o registrarse.
+    Descripción: Página de información sobre la marca de la tienda.
 
-Uso: Permite a los usuarios autenticarse en la aplicación o crear una nueva cuenta.
+    Uso: Proporciona detalles sobre la misión, visión, y/o el equipo detrás del e-commerce.
 
-- ** GET "/shop" (Shop)
+- GET "/auth" (auth)
 
-Descripción: Página principal del catálogo de productos.
+    Descripción: Página de autenticación para iniciar sesión o registrarse.
 
-Uso: Muestra una lista de productos disponibles para los usuarios.
+    Uso: Permite a los usuarios autenticarse en la aplicación o crear una nueva cuenta.
 
-- ** GET /access-denied
-Descripción: Página que se muestra cuando un usuario intenta acceder a una ruta para la cual no tiene permisos.
+- GET "/shop" (Shop)
 
-Uso: Informa al usuario que no tiene acceso a la página o recurso solicitado.
+    Descripción: Página principal del catálogo de productos.
 
-- ** GET /*
+    Uso: Muestra una lista de productos disponibles, permitiendo a los usuarios navegar y buscar productos por categorías, precios, nombre, etc.
 
-Descripción: Página que se muestra cuando la ruta solicitada no se encuentra en la aplicación.
+- GET "/access-denied"
 
-Uso: Proporciona una página de error 404 para las rutas no reconocidas.
+    Descripción: Página que se muestra cuando un usuario intenta acceder a una ruta para la cual no tiene permisos.
+
+    Uso:  Informa al usuario que no tiene acceso a la página o recurso solicitado y ofrece opciones para navegar a otras secciones.
+
+-  GET "/*"
+
+    Descripción: Página que se muestra cuando la ruta solicitada no se encuentra en la aplicación.
+
+    Uso: Proporciona una página de error 404 para las rutas no reconocidas, con opciones para regresar al inicio o navegar a otras secciones.
 
 
 RUTAS PROTEGIDAS
 
-Estas rutas requieren que el usuario esté autenticado y que el token obtenido en el momento de la autenticación permanezca valido y sea el correcto.
+Estas rutas requieren que el usuario esté autenticado y que el token obtenido en el momento de la autenticación sea válido. Se diferencian por el contenido y las funcionalidades según el rol del usuario (cliente o administrador).
 
-- ** GET "/profile"
+- GET "/profile"
 
-Descripción: Página del perfil del usuario autenticado.
-Uso: Permite a los usuarios ver y editar su información personal.
+    Descripción: Página del perfil del usuario autenticado.
+    Uso: Permite a los usuarios ver y editar su información personal, como nombre, correo electrónico, y dirección. Los administradores pueden ver información adicional según su rol.
 
-- ** POST "/profile-create"
+- POST "/profile-create"
 
-Descripción: Ruta para crear un nuevo perfil de usuario (si es necesario).
-Uso: Permite a los usuarios agregar o actualizar su perfil con información adicional, como dirección y número de teléfono.
+    Descripción: Ruta para crear o actualizar un perfil de usuario.
+    Uso: Permite a los usuarios agregar o actualizar información adicional, como dirección y número de teléfono, que puede ser útil para realizar compras con envío a domicilio.
 
-Ambas rutas protegidas dará acceso a usuarios clientes y usuarios administradores, diferenciando el contenido y funcionalidades segun la condición de su rol.
 
 # TECNOLOGÍAS UTILIZADAS
 
@@ -496,4 +582,4 @@ Agradezco cualquier retroalimentación constructiva que pueda ayudarme a mejorar
 
 
 # Licencia
-Este proyecto es de propiedad personal y está destinado a fines educativos dentro del marco de una diplomatura. No se concede ninguna licencia para su uso o distribución fuera del contexto académico. 
+Este proyecto es de propiedad personal y está destinado a fines educativos dentro del marco de una diplomatura. No se concede ninguna licencia para su uso o distribución fuera del contexto académico.

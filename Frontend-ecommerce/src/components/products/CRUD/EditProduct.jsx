@@ -8,7 +8,7 @@ import './productcrud.css'
 ReactModal.setAppElement("#root");
 
 const ProductEditModal = ({ isOpen, onClose, product, onProductUpdated})=>{
-    const [image, setImage] = useState(null); 
+    const [image, setImage] = useState(null);
     const [currentImageURL, setCurrentImageURL] = useState("");
     const { categories } = useContext(CategoryContext);
     const [isSuccess, setIsSuccess] = useState(false);
@@ -21,7 +21,7 @@ const ProductEditModal = ({ isOpen, onClose, product, onProductUpdated})=>{
         image: "",
         category_id:""
     });
-    
+
     useEffect(() => {
         if (product) {
         setFormData({
@@ -44,13 +44,18 @@ const ProductEditModal = ({ isOpen, onClose, product, onProductUpdated})=>{
         };
 
     const handleImageChange = (e) => {
-        setImage(e.target.files[0]); 
+        setImage(e.target.files[0]);
     };
-        
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const { isValid, errorMessages } = validateProductForm(formData.name, formData.description, formData.price, formData.category_id);
+        const { isValid, errorMessages } = validateProductForm(
+            formData.name,
+            formData.description,
+            formData.price,
+            formData.category_id
+        );
         if (!isValid) {
             setMessages(errorMessages);
             return;
@@ -71,12 +76,10 @@ const ProductEditModal = ({ isOpen, onClose, product, onProductUpdated})=>{
         } else {
             setMessages(["Failed to update product"]);
             setIsSuccess(false)
-            console.error("Failed to update product.");
         }
         } catch (error) {
             setMessages(["Error updating product"]);
             setIsSuccess(false);
-            console.error("Error updating product:", error);
         }
     };
 
@@ -91,7 +94,7 @@ const ProductEditModal = ({ isOpen, onClose, product, onProductUpdated})=>{
         }
         return formData;
     };
-    
+
     return (
         <ReactModal
             isOpen={isOpen}
@@ -145,23 +148,31 @@ const ProductEditModal = ({ isOpen, onClose, product, onProductUpdated})=>{
                 />
                 {currentImageURL && (
                     <div>
-                    <img src={currentImageURL} alt="Current" style={{ width: '100px', height: 'auto' }} />
+                    <img
+                        src={currentImageURL}
+                        alt="Current"
+                        style={{ width: '100px', height: 'auto' }}
+                    />
                     </div>
                 )}
             </div>
             <div>
             <label htmlFor="category_id">Category</label>
-            <select 
-                id="category_id" 
-                name="category_id" 
+            <select
+                id="category_id"
+                name="category_id"
                 value={formData.category_id}
-                onChange={(e) => setFormData({ ...formData, category_id: e.target.value })}
+                onChange={(e) => setFormData(
+                    { ...formData, category_id: e.target.value }
+                )}
                 required>
                 <option value="">Select a category</option>
-                            {categories.map((category) => (
-                                <option key={category.category_id} value={category.category_id}>
-                                    {category.name}
-                                </option>
+                {categories.map((category) => (
+                    <option
+                        key={category.category_id}
+                        value={category.category_id}>
+                        {category.name}
+                    </option>
                 ))}
             </select>
             </div>
@@ -172,8 +183,8 @@ const ProductEditModal = ({ isOpen, onClose, product, onProductUpdated})=>{
             <p key={index} className={`p__message ${isSuccess ? "p__message-success" : "p__message-error"}`}>{msg}</p>
             ))}
         </div>
-</form>
-            </ReactModal>
+        </form>
+        </ReactModal>
         );
     }
 

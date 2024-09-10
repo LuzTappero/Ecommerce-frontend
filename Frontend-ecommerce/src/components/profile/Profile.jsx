@@ -15,26 +15,38 @@ export const Profile = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const { profile, setProfile } = useUserProfile()
     const [profileExists, setProfileExists] = useState(false);
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
         if (isAuthenticated && user) {
-        const checkProfile = async () => {
-            if (!profile){
-                const data = await getProfileByUserId(user.userId);
-                if (data.exists) {
-                    setProfile(data.profile);
-                    setProfileExists(true);
-                } else {
-                    setProfileExists(false);
-                }
-            } else {
+            if (profile) {
                 setProfileExists(true);
+                setLoading(false);
+            }else{
+                const checkProfile = async () => {
+                    try{
+                        const data = await getProfileByUserId(user.userId);
+                        if (data && data.exists) {
+                            setProfile(data.profile);
+                            setProfileExists(true);
+                        } else {
+                            setProfileExists(false);
+                        }
+                    } catch (err) {
+                        if (err.response?.status !== 404) {
+                            console.error("Profile not found:", err);
+                        }
+                    } finally {
+                        setLoading(false);
+                    }
+                };
+                checkProfile();
             }
-        };
-        checkProfile();
+        } else {
+            setLoading(false);
         }
-    }, [isAuthenticated, user,profile, setProfile]);
+    }, [isAuthenticated, user, profile, setProfile]);
 
     const handleViewProducts = () => {
         navigate("/shop");
@@ -48,13 +60,9 @@ export const Profile = () => {
                 navigate("/profile-create");
             }
         } catch (error) {
-            console.error("Error handling profile button click:", error);
+        console.error("Error handling profile button click:", error);
         }
     };
-
-    if (!isAuthenticated) {
-        return <p>You need to be logged in to view this page.</p>;
-    }
 
     return (
         <>
@@ -65,25 +73,37 @@ export const Profile = () => {
                 {user?.username}!
             </h2>
             <div className="profile__container-message">
+            {isAuthenticated && user?.role === 'admin' ? (
                 <p>
-                Here, you can view and adjust your profile information according
-                to your preferences. Make sure your details are up to date for a
-                better experience. You can add a social media account to stay
-                connected, provide an address for seamless delivery in case you
-                make a purchase, and add a contact number for better
-                communication. Keeping your profile information updated helps us
-                serve you better!
-                </p>
+                    Here, you can manage and update your profile information to keep your account settings
+                    aligned with your administrative role.
+                    Ensure your details are accurate for a streamlined experience managing the platform.
+                    You can add a social media account to stay connected with the community,
+                    update your contact number for efficient communication with team members and customers,
+                    and provide an address if necessary for administrative purposes.
+                    Keeping your profile information up to date allows us to maintain effective
+                    collaboration and support your administrative tasks more efficiently!
+            </p>
+                ):
+                <p>
+                    Here, you can view and adjust your profile information according
+                    to your preferences. Make sure your details are up to date for a
+                    better experience. You can add a social media account to stay
+                    connected, provide an address for seamless delivery in case you
+                    make a purchase, and add a contact number for better
+                    communication. Keeping your profile information updated helps us
+                    serve you better!
+                </p>}
             </div>
-            <div className="profile__container-details">
-                <ProfileButtons
-                user={user}
-                handleButtonProfile={handleButtonProfile}
-                handleViewProducts={handleViewProducts}
-                modalIsOpen={modalIsOpen}
-                setModalIsOpen={setModalIsOpen}
-                ></ProfileButtons>
-            </div>
+                <div className="profile__container-details">
+                    <ProfileButtons
+                        user={user}
+                        handleButtonProfile= {handleButtonProfile}
+                        handleViewProducts={handleViewProducts}
+                        modalIsOpen={modalIsOpen}
+                        setModalIsOpen={setModalIsOpen}
+                    ></ProfileButtons>
+                </div>
             </div>
         </main>
         </>

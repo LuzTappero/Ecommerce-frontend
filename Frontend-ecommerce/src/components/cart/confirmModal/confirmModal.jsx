@@ -28,7 +28,7 @@ const ConfirmPurchaseModal = ({
                 </li>
                 ))}
             </ul>
-            <p>Total Price: ${totalPrice.toFixed(2)}</p>
+            <strong>Total Price: ${totalPrice.toFixed(2)}</strong>
         </div>
         <p>
             Delivery Option:{' '}

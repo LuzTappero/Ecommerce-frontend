@@ -1,7 +1,7 @@
 .item {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 0.5rem;
     background-color: transparent;
     border-radius: 15px;
     color: #404c4c;
@@ -10,8 +10,8 @@
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 350px;
-    min-width: 250px;
+    min-height: 250px;
+    min-width: 200px;
     box-sizing: border-box;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .item h3 {
-    margin: 1rem;
+    margin: 0.7rem;
     font-size: 1.5rem;
     letter-spacing: 0.05rem;
 }
@@ -44,14 +44,14 @@
 }
 
 .item span {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     opacity: 0.9;
 }
 
 .item__button-add, .item__button-delete--admin, .item__button-edit--admin{
     margin: auto;
     padding: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     border: none;
     background-color: transparent;
 }

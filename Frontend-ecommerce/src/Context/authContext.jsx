@@ -13,17 +13,17 @@ const AuthProvider = ({ children }) => {
   const { setProfile } = useUserProfile()
 
   useEffect(()=>{
-    const checkTokenExpiry = ()=>{
       const token= sessionStorage.getItem('access_token')
       if (token){
         try{
           const decoded= jwtDecode(token)
-          const expiryDate = decoded.exp * 1000;
-            if (expiryDate < Date.now()) {
-              logout();
-            }else{
+            if (decoded){
               setUser(decoded)
               setIsAuthenticated(true)
+            }
+            else{
+              setUser(null)
+              setIsAuthenticated(false)
             }
           }catch(error){
             console.error('Error decoding token', error);
@@ -33,24 +33,21 @@ const AuthProvider = ({ children }) => {
           setIsAuthenticated(false)
           setUser(null)
       }
-    }
-
-    checkTokenExpiry()
   }, [isAuthenticated]);
 
   const login = async (email, password) => {
     try {
       const response = await api.post('/login', {
         email, password});
-      setIsAuthenticated(true);
-      setUser(response.data.user);
-      sessionStorage.setItem('access_token', response.data.token)
-      return response.data;
+        setIsAuthenticated(true);
+        setUser(response.data.user);
+        sessionStorage.setItem('access_token', response.data.token)
+        return response.data;
     } catch (error) {
-      setIsAuthenticated(false);
-      setUser(null)
-      const errorMessage = error.response?.data?.message || "Login failed";
-      return { message: errorMessage };
+        setIsAuthenticated(false);
+        setUser(null)
+        const errorMessage = error.response?.data?.message || "Login failed";
+        return { message: errorMessage };
     }
   };
   const register = async (username, email, password) => {

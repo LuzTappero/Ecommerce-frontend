@@ -32,15 +32,23 @@ function Cart() {
     if (isAuthenticated && user) {
       const fetchProfile = async () => {
         if (!profile) {
-          const data = await getProfileByUserId(user.userId);
-          if (data && data.exists) {
-            setProfile(data.profile);
+          try{
+            const data = await getProfileByUserId(user.userId);
+            if (data && data.exists) {
+              setProfile(data.profile);
+            }else {
+              toast.info("It looks like you don't have a profile yet. Please create one so you can complete your purchase and enjoy home delivery!");
+            }
+          }catch(error){
+            if (error.response?.status !== 404) {
+              console.error("Error fetching profile:", error);
+            }
           }
         }
       };
       fetchProfile();
     }
-  }, [isAuthenticated, user, profile, setProfile]);
+  }, [isAuthenticated, user ]);
 
   const handleDeliveryOptionChange = (e) => {
     setDeliveryOption(e.target.value);

@@ -1,6 +1,5 @@
 export const validateProfileForm = (address, phone, social_media) => {
-
-    let errors = {}
+    let errors = {};
     let isValid = true;
 
     if (!address.trim() || /[^a-zA-Z0-9\s,.-]/.test(address)) {
@@ -19,13 +18,18 @@ export const validateProfileForm = (address, phone, social_media) => {
         errors.social_media = 'Social media URL is not valid';
     }
 
-    return { isValid,  errorMessages: Object.values(errors), };
-};
+    return { isValid, errorMessages: Object.values(errors) };
+    };
 
-export const handleProfileErrorMessages = (error) => {
-    if (error && error.response && error.response.data && error.response.data.errors) {
+    export const handleProfileErrorMessages = (error) => {
+    if (
+        error &&
+        error.response &&
+        error.response.data &&
+        error.response.data.errors
+    ) {
         return error.response.data.errors.map((err) => err.msg);
     } else {
-        return ["An unexpected error occurred"];
+        return ['An unexpected error occurred'];
     }
 };

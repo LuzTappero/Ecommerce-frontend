@@ -1,12 +1,12 @@
 import { useState } from "react";
-
-import UserPurchases from "../../orders/getOrders";
+import UserPurchases from "../../Purchases/getOrders";
 import "./profileButtons.css";
 import ProfileDetails from "../profileCRUD/ProfileDetails";
 
 export const ProfileButtons = ({
     user,
     handleViewProducts
+
     }) => {
     const [showUserData, setShowUserData] = useState(false);
     const [showPurchases, setShowPurchases] = useState(false);
@@ -19,7 +19,6 @@ export const ProfileButtons = ({
     const handleProfileDataToggle = () => {
         setShowProfileData(!showProfileData);
     };
-
 
     return (
     <>

@@ -5,16 +5,16 @@ import { Filters } from '../../filters/Filters';
 import { AuthContext } from '../../../Context/authContext';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { getProducts } from '../../../services/products/productAPI';
+import { useProducts } from '../../../Context/productContext';
 import ReactModal from 'react-modal';
 import ProductDeleteModal from '../CRUD/ProductDelete';
 import ProductEditModal from '../CRUD/EditProduct';
 import ProductCreateModal from '../CRUD/CreateProduct';
 import ProductItem from './productItem/productItem';
 import Cart from '../../cart/Cart';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { getProducts } from '../../../services/products/productAPI';
-import { useProducts } from '../../../Context/productContext';
 import './products.css';
 
 ReactModal.setAppElement('#root');
@@ -73,7 +73,9 @@ function ProductList() {
         }
         } else {
         toast.error('You need to be logged in to add products to the cart.');
-        navigate('/auth');
+        setTimeout(()=>{
+            navigate('/auth');
+        }, 1000)
         }
     };
 
