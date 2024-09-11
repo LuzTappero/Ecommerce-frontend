@@ -10,8 +10,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 2.8rem;
-  width: 2.8rem;
+  height: 2rem;
+  width: 2rem;
   position: fixed;
   right: 2.8rem;
   top: 10rem;
@@ -34,12 +34,12 @@
 
 .cart__button-buy {
   margin: auto;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   margin-bottom: 4rem;
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.4rem;
   color: #eeeeee;
-  font-size: 18px;
+  font-size: 1rem;
   border: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -48,7 +48,7 @@
   background: #ebeae7;
   display: none;
   flex-direction: column;
-  padding: 5rem;
+  padding: 3rem;
   position: fixed;
   right: 0px;
   top: 0px;
@@ -74,16 +74,16 @@
   margin: 1rem;
   text-align: center;
   margin-top: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   color: #383438;
 
 }
 
 .cart p {
   text-align: center;
-  font-size:1.2rem;
-  color: #1f1e1e;
-  margin: 0.5rem 0;
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 1.7;
 }
 
 .delivery-option {
@@ -96,7 +96,7 @@
 .delivery-option label {
   display: flex;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   margin-bottom: 0.5rem;
 }
 
@@ -108,14 +108,99 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+
+.delivery-details strong{
+  font-size: 0.8rem;
+  margin-left: 3rem;
+}
+
 .delivery-option input[type="radio"] {
   width: 24px;
   height: 24px;
   margin-right: 5px;
 }
 
-.delivery-details p {
-  font-size: 1.2rem;
-  color: #666;
-  line-height: 1.7;
+
+@media (max-width: 768px) {
+  .cart__toggle {
+    right: 1rem;
+    top: 7rem;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+  }
+
+  .cart {
+    width: 18rem;
+    padding: 1rem;
+    border-left: 1px solid #ddd;
+  }
+
+  .cart__button-buy {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    padding: 0.3rem;
+  }
+  .subtitle__totalprice {
+    font-size: 0.9rem;
+    margin: 0.5rem;
+  }
+
+  .cart p {
+    font-size: 0.75rem;
+  }
+
+  .delivery-option {
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+
+  .delivery-option label {
+    font-size: 0.75rem;
+  }
+
+  .delivery-details {
+    padding: 0.8rem;
+    margin-top: 0.8rem;
+  }
+
+  .delivery-details strong{
+    font-size: 0.7rem;
+    margin-left: 2rem;
+  }
+
+
 }
+
+
+@media (max-width: 480px) {
+  .cart__toggle {
+    right: 0.8rem;
+    top: 5rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    padding: 0.4rem;
+  }
+
+  .cart {
+    width: 16rem;
+    padding: 1.5rem; /
+  }
+
+  .cart__button-buy {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .subtitle__totalprice {
+    font-size: 0.85rem;
+    margin: 0.4rem;
+  }
+
+  .delivery-details {
+    padding: 0.6rem;
+    margin-top: 0.6rem; 
+  }
+}
+

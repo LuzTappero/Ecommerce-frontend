@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../config/axiosConfig";
 
 const API_URL_PROD = "http://localhost:8080/products";
 

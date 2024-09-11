@@ -21,7 +21,7 @@ El proyecto cuenta con funcionalidades específicas para administradores, que pu
 
 - Frontend:
 
-    1- Navegar a la carpeta del servidor backend
+    1- Navegar a la carpeta del frotend
 
     2- Ejecutar el comando git clone https://github.com/LuzTappero/Girly-ecommerce
 
@@ -40,6 +40,7 @@ El proyecto cuenta con funcionalidades específicas para administradores, que pu
     2- Ejecutar el comando npm install
 
 3. Configurar las variables de entorno
+
  - Variables de Entorno para el Backend:
 
     PORT= 8080
@@ -49,6 +50,7 @@ El proyecto cuenta con funcionalidades específicas para administradores, que pu
     MAX= 100
 
     ORIGIN_ACCEPTED= http://localhost:5173 (local host del frotend para la configuración de cors)
+
 - Variables de Entorno para la Base de Datos:
 
     DB_HOST=localhost
@@ -61,7 +63,7 @@ El proyecto cuenta con funcionalidades específicas para administradores, que pu
 
     DB_DIALECT=mysql
 
-- Variables de entorno para la configuración de la nube de imágenes cloudinary
+- Variables de entorno para la configuración de la nube de imágenes cloudinary(utilizadas en configuración de backend)
 
     CLOUD_NAME=dmofgxbvt
 
@@ -72,7 +74,7 @@ El proyecto cuenta con funcionalidades específicas para administradores, que pu
 
 4. Configurar la base de datos
 
-La base de datos exportada se encuentra en la carpeta db, a la misma altura que src.
+La base de datos exportada se encuentra en la carpeta 'BACKEND-GIRLY/db, a la misma altura que src.
 
 La tabla productos ya incluye un script de inserción para poblar el modelo con los productos necesarios.
 La tabla productos ya incluye un script de inserción para poblar el modelo con las categorias necesarias.
@@ -82,13 +84,13 @@ La tabla productos ya incluye un script de inserción para poblar el modelo con 
 
     1-Navegar a la carpeta del servidor
 
-    2- Ejecutar el comando: npm install
+    2- Ejecutar el comando: npm run dev
 
 - Frontend:
 
     1- Navegar a la carpeta del frontend
 
-    2- Ejecutar el comando npm install
+    2- Ejecutar el comando npm run dev
 
 # USO
 
@@ -181,7 +183,7 @@ Cuerpo de la solicitud (JSON)
 
     {
         "username": "username",
-        "password": "password",
+        "password": "SecurePassword123*",
         "email": "username@gmail.com",
         "role": "admin"
     }
@@ -559,7 +561,7 @@ HTML5: Lenguaje de marcado para estructurar el contenido de las páginas web.
 
 CSS: Hojas de estilo en cascada para diseñar y maquetar el contenido web.
 
-Axios: Biblioteca para realizar solicitudes HTTP desde el frontend (si lo estás usando).
+Axios: Biblioteca para realizar solicitudes HTTP desde el frontend.
 
 ## Tecnologías comunes
 
@@ -569,17 +571,16 @@ REST API: Protocolo de comunicación para la interacción entre el frontend y el
 
 JSON: Formato de intercambio de datos utilizado para la comunicación entre frontend y backend.
 
-JWT (JSON Web Tokens): Para autenticación y autorización en ambas capas (si es aplicable).
+JWT (JSON Web Tokens): Para autenticación.
 
 Cloudinary: utilizado en ambos servicios para la gestión y almacenamiento de imágenes.
 
 
 # Contribución
 
-Este proyecto es desarrollado como parte de una diplomatura personal y, por lo tanto, no está abierto a contribuciones externas. Sin embargo, si tienes comentarios o sugerencias para mejorar el proyecto, no dudes en contactarme directamente a través de mi email 'luztappero@gmail.com' o mi cuenta de linkedIn 'https://www.linkedin.com/in/luztappero/'
+Este proyecto es desarrollado como parte de una diplomatura personal. Si tienes comentarios o sugerencias para mejorar el proyecto, no dudes en contactarme directamente a través de mi email 'luztappero@gmail.com' o mi cuenta de linkedIn 'https://www.linkedin.com/in/luztappero/'
 
 Agradezco cualquier retroalimentación constructiva que pueda ayudarme a mejorar el proyecto.
 
-
 # Licencia
-Este proyecto es de propiedad personal y está destinado a fines educativos dentro del marco de una diplomatura. No se concede ninguna licencia para su uso o distribución fuera del contexto académico.
+Este proyecto es de propiedad personal y está destinado a fines educativos dentro del marco de una diplomatura.

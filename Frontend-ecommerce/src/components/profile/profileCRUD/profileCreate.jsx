@@ -51,7 +51,6 @@ const ProfileCreate = () => {
         try {
             const response = await createProfile(profileData);
             if (response.status === 201) {
-                toast.success("Profile details saved successfully");
                 setProfileData({ address: '', phone: '', social_media: '' });
                 setProfile(response.data.profile);
                 if (location.state?.fromCart) {
@@ -67,6 +66,7 @@ const ProfileCreate = () => {
                         navigate('/shop');
                     }, 1500);
                 } else {
+                    toast.success("Profile details saved successfully");
                     navigate("/profile");
                 }
             }
@@ -124,8 +124,6 @@ const ProfileCreate = () => {
             <button className="button-create" type="submit">
                 Create Profile
             </button>
-            {/* {success && <p className="success-message">{success}</p>}
-            {error && <p className="error-message">{error}</p>} */}
             </div>
         </form>
         </div>

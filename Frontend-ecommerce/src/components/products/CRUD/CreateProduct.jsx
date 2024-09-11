@@ -62,11 +62,9 @@ const ProductCreateModal = ({ isOpen, onClose, onProductCreated})=>{
             setPrice('')
             setCategory_id('')
             setImage(null)
-
             if (fileInputRef.current) {
                 fileInputRef.current.value = null;
             }
-
             onProductCreated()
             setTimeout(() => {
                 setMessages([]);

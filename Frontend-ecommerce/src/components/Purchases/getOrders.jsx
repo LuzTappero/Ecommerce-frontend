@@ -51,7 +51,6 @@ const UserPurchases = ({ isVisible }) => {
 
   return (
     <div className={`purchases ${isVisible ? "show" : ""}`}>
-      <h2>MY PURCHASES</h2>
       {orders.length > 0 ? (
         <ul>
           {orders.map((order) => {

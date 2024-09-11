@@ -1,13 +1,13 @@
 .profile-button {
     display: block;
     width: 50%;
-    padding: 0.6rem;
+    padding: 0.5rem;
     margin:auto;
     background-color: #aaa0aa;
     color: white;
     border: none;
     border-radius: 6px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-align: center;
 }
 
@@ -27,7 +27,7 @@ a{
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
 .profile__user-data.show{
@@ -40,14 +40,12 @@ a{
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-height: 0;
+    transition: max-height 1s ease, opacity 1s ease, transform 1s ease;
     overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
-
 }
 
 .profile__details-content.show{
     max-height: 500px;
-    max-width: 700px;
     opacity: 1;
     transform: scale(1);
 }
@@ -62,9 +60,52 @@ a{
 }
 
 .profile__user-data--info strong{
-    font-size: 1.0rem;
+    font-size: 0.8rem;
 }
 
 .profile__user-data--info:hover {
     transform: scale(1.02);
+}
+
+
+@media (min-width: 1025px) {
+    .profile-button {
+        width: 50%;
+        font-size: 0.8rem;
+    }
+
+    .profile__details-content {
+        max-width: 700px;
+    }
+}
+
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .profile-button {
+        width: 60%;
+        font-size: 0.9rem;
+    }
+
+    .profile__details-content {
+        max-width: 90%;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .profile-button {
+        width: 80%;
+        font-size: 0.8rem;
+    }
+
+    .profile__user-data,
+    .profile__details-content {
+        max-height: 0;
+        opacity: 0;
+    }
+
+    .profile__user-data--info {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
 }

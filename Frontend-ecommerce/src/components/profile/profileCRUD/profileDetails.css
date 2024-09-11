@@ -4,14 +4,12 @@
 
 }
 
-
 .profile h3 {
     text-align: center;
     color: #aaa0aa;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
 }
-
 
 .profile__details strong{
     font-size: 1.0rem;
@@ -75,69 +73,98 @@
 }
 
 .p_notprofile{
-    font-size: 1.3rem;
+    font-size: 0.8rem;
 }
 
-@media (max-width: 1200px) {
-    .profile {
-        padding: 2.5rem;
-        margin: 3rem auto;
-        max-width: 40rem;
+@media (min-width: 1025px) {
+    .userProfile {
+        padding: 0.2rem;
+        margin: 1rem auto;
     }
 
-    .profile h3{
-        font-size: 1.4rem;
-    }
-    .profile__details {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 992px) {
-    .profile {
-        padding: 2rem;
-        margin: 2.5rem auto;
-        max-width: 35rem;
+    .profile h3 {
+        font-size: 1.1rem;
     }
 
     .profile__details input {
-        font-size: 1rem;
+        font-size: 16px;
+    }
+
+    .button-container {
+        gap: 1rem;
+    }
+
+    .button-edit, .button-save, .button-cancel, .button-create {
+        font-size: 0.7rem;
+    }
+
+    .button-create {
+        width: 25%;
     }
 }
 
-@media (max-width: 768px) {
-    .profile__details {
-        padding: 1.5rem;
-        margin: 2rem auto;
-        max-width: 30rem;
+@media (max-width: 1024px) and (min-width: 768px) {
+    .userProfile {
+        padding: 0.5rem;
+        margin: 0.5rem auto;
     }
 
-    .profile__details h3 {
-        font-size: 1.2rem;
+    .profile h3 {
+        font-size: 1.0rem;
     }
 
-    .button-edit,
-    .button-save,
-    .button-cancel {
+    .profile__details input {
+        font-size: 15px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .button-edit, .button-save, .button-cancel, .button-create {
+        font-size: 0.8rem;
+        width: 40%;
+    }
+
+    .button-create {
         width: 30%;
     }
 }
+@media (max-width: 767px) {
+    .userProfile {
+        padding: 0.5rem;
+        margin: 0.5rem auto;
+    }
 
-@media (max-width: 576px) {
-    .profile {
-        padding: 1rem;
-        margin: 1.5rem auto;
-        max-width: 90%;
+    .profile h3 {
+        font-size: 1rem;
     }
 
     .profile__details input {
-        padding: 0.2rem;
-        font-size: 0.5rem;
+        font-size: 14px;
     }
 
-    .button-edit,
-    .button-save,
-    .button-cancel {
-        width: 40%;
+    .button-container {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center; 
+    }
+
+    .button-edit, .button-save, .button-cancel, .button-create {
+        font-size: 0.7rem;
+        width: 60%;
+    }
+
+    .button-create {
+        width: 30%;
+    }
+
+    .required {
+        font-size: 1rem;
+    }
+
+    .p_notprofile {
+        font-size: 1.1rem;
     }
 }

@@ -4,15 +4,12 @@
     align-items: center;
     justify-content: space-evenly;
     gap: 1.5rem;
-    font-size: 13px;
     padding: 1rem;
-    margin: 5rem ;
-    margin-bottom: 0;
+    margin: 3rem ;
     background-color: #f9f9f9;
     margin-top:0.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
 }
 
 .filters > div {
@@ -26,7 +23,7 @@
 .filters label {
     white-space: nowrap;
     color: #333;
-    font-size: 1.1rem;
+    font-size: 0.7rem;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -38,9 +35,9 @@
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 0.7rem;
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     margin:auto
 
@@ -53,7 +50,6 @@
 .input__range:hover,
 .select_filter :hover,
 .input__text:hover {
-    border-color: #007bff;
     box-shadow: 0 0 0 1px rgba(0, 123, 255, 0.25);
 }
 
@@ -63,8 +59,8 @@
     opacity:75%;
     color: #fff;
     border-radius: 4px;
-    font-size: 14px;
-    margin-top: 0.3rem;
+    font-size: 0.8rem;
+    margin: 0.3rem;
     display: inline-block;
 }
 

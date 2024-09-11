@@ -41,6 +41,7 @@ function App() {
                         <Cart />
                       </FiltersProvider>
                     </CartProvider>}/>
+                    
               <Route path="/auth" element={<Auth />} />
               <Route path="/access-denied" element={<AccessDenied />} />
               <Route path="/about" element={<AboutUs />} />

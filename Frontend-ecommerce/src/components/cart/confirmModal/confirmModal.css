@@ -4,7 +4,7 @@
     justify-content: center;
     max-width: 600px;
     margin: auto;
-    padding: 4rem;
+    padding: 3rem;
     background-color: #e2e2e2;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -16,19 +16,19 @@
 
 .confirm-modal h2{
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
     color: #333;
 }
 
 .confirm-modal p{
     margin: 0.5rem 0;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     color: #666;
 }
 
 .confirm-modal strong{
-    font-size: 1.2rem;
+    font-size: 1.0rem;
 }
 
 
@@ -36,7 +36,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.4rem;
     }
 
 .confirm-modal ul{
@@ -47,7 +47,6 @@
 
 .confirm-modal ul li {
     margin: 0.5rem 0;
-    font-size: 16px;
     color: #333;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid #c5c5c5;
@@ -66,8 +65,8 @@
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 12px 25px;
-    font-size: 18px;
+    padding:0.7rem 1.4rem;
+    font-size: 0.8rem;
     cursor: pointer;
     margin: 0;
 }
@@ -93,30 +92,37 @@
 
 @media (max-width: 768px) {
     .confirm-modal {
-        max-width: 90%;
-        padding: 2rem;
+        max-width: 80%;
+        padding: 1rem;
     }
 
     .confirm-modal h2 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .confirm-modal p {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .confirm-modal ul li {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
+    .confirm-modal strong{
+        font-size: 0.8rem;
+    }
+
+
     .confirm-modal-buttons {
-        flex-direction: column;
+        flex-direction: row;
         gap: 0.5rem;
     }
 
     .btn-confirm, .btn-cancel {
-        font-size: 16px;
-        padding: 10px 20px;
+        border-radius: 5px;
+        padding:0.5rem 1rem;
+        font-size: 0.8rem;
+        width: 35%;
     }
 }
 

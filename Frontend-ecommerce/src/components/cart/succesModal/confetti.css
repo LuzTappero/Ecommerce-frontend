@@ -7,9 +7,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: #fff;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 8px;
-    max-width: 500px;
+    max-width: 450px;
     width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -38,27 +38,91 @@
 
 .succes-modal h2 {
     margin-top: 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #333;
 }
 
 .succes-modal p {
     margin: 10px 0;
     color: #666;
+    font-size: 0.9rem;
 }
 
 .succes-modal button {
     background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 0.8rem 1.6rem;
+    padding: 0.7rem 1.4rem;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     cursor: pointer;
-    margin: 1rem;
+    margin: 1rem auto;
     transition: background-color 0.3s;
 }
 
 .succes-modal button:hover {
     background-color: #0056b3;
 }
+
+
+@media (min-width: 1025px) {
+    .succes-modal {
+        max-width: 450px; 
+        padding: 1rem;
+    }
+
+    .succes-modal h2 {
+    font-size: 1.2rem;
+    }
+
+    .succes-modal p {
+    font-size: 0.9rem;
+    }
+
+    .succes-modal button {
+    font-size: 0.8rem;
+    }
+}
+
+
+@media (max-width: 1024px) and (min-width: 768px) {
+.succes-modal {
+    max-width: 80%;
+    padding: 1rem;
+}
+
+.succes-modal h2 {
+    font-size: 1.1rem;
+}
+
+.succes-modal p {
+    font-size: 0.85rem;
+}
+
+.succes-modal button {
+    font-size: 0.9rem;
+}
+}
+
+
+@media (max-width: 767px) {
+    .succes-modal {
+        max-width: 90%;
+        padding: 0.8rem;
+    }
+
+    .succes-modal h2 {
+        font-size: 1rem;
+    }
+
+    .succes-modal p {
+        font-size: 0.8rem;
+    }
+
+    .succes-modal button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+
+  }

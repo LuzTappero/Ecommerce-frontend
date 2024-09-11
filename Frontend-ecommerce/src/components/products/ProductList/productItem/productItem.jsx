@@ -36,28 +36,32 @@ const ProductItem = ({
         <div>
             {user && user.role === 'admin' ? (
             <>
-                <button
-                className="item__button-edit--admin"
-                onClick={handleEditProduct}
-                >
-                <FontAwesomeIcon icon={faEdit} />
-                </button>
-                <button
-                className="item__button-delete--admin"
-                onClick={handleDeleteProduct}
-                >
-                <FontAwesomeIcon icon={faTrash} />
-                </button>
+                <div className='item__button-container'>
+                    <button
+                    className="item__button-edit--admin"
+                    onClick={handleEditProduct}
+                    >
+                    <FontAwesomeIcon icon={faEdit} />
+                    </button>
+                    <button
+                    className="item__button-delete--admin"
+                    onClick={handleDeleteProduct}
+                    >
+                    <FontAwesomeIcon icon={faTrash} />
+                    </button>
+                </div>
             </>
             ) : (
-            <button
-                className="item__button-add"
-                onClick={() => handleAddToCart(product)}
-            >
-                <FontAwesomeIcon
-                icon={isProductInCart ? faTrash : faShoppingCart}
-                />
-            </button>
+                <div className='item__button-container'>
+                    <button
+                        className="item__button-add"
+                        onClick={() => handleAddToCart(product)}
+                    >
+                        <FontAwesomeIcon
+                        icon={isProductInCart ? faTrash : faShoppingCart}
+                        />
+                    </button>
+                </div>
             )}
         </div>
         </li>
